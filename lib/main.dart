@@ -86,8 +86,7 @@ class _QuizPageState extends State<QuizPage> {
                 if (correctAnswer==true){
                   print('right answer');
                 }
-                else {
-                  print('wrong answer');
+                else {print('wrong answer');
                 }
                 setState(() {
                   questionNumber++;
