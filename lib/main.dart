@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-
+import 'question.dart';
 void main() => runApp(Quizzler());
 
 class Quizzler extends StatelessWidget {
@@ -36,16 +36,23 @@ class _QuizPageState extends State<QuizPage> {
       color:Colors.red,
     )
   ];
-  List <String> questions =[
-    'You can lead a cow down stairs but not up stairs.',
-  'Approximately one quarter of human bones are in the feet.',
-    'A slug\'s blood is green.',
+  List<Question> questionBank = [
+  Question(q:'You can lead a cow down stairs but not up stairs.',  a:false),
+  Question(q: 'Approximately one quarter of human bones are in the feet.', a:true),
+  Question(q:'A slug\'s blood is green.',  a:true),
+  Question(q:'The pattern on every person\'s tongue is as unique as a fingerprint',  a:true),
+  Question(q:'A group of crows is called murder.',  a:true),
+  Question(q:'Tomato sauce was sold in the 1800\'s as medicine.',  a:true),
+  Question(q:'In France, there’s a place called Y.',  a:true),
+  Question(q:'Half of all bank robberies take place on a Friday.',  a:true),
+  Question(q:'Cheetahs are so shy that zoos have to give them support dogs.',  a:true),
+  Question(q:'The Number of People Travelling in the Indian Railways Every Day is Equal to the Population of Australia.',  a:true),
+  ];
 
-  ];
-  List <bool> answers =[
-    false,true,true
-  ];
+
   int questionNumber=0;
+
+
   @override
   Widget build(BuildContext context) {
     return Column(
@@ -58,7 +65,7 @@ class _QuizPageState extends State<QuizPage> {
             padding: EdgeInsets.all(10.0),
             child: Center(
               child: Text(
-                questions[questionNumber],
+                questionBank[questionNumber].questionText,
                 textAlign: TextAlign.center,
                 style: TextStyle(
                   fontSize: 25.0,
@@ -82,7 +89,7 @@ class _QuizPageState extends State<QuizPage> {
                 ),
               ),
               onPressed: () {
-                bool correctAnswer=answers[questionNumber];
+                bool correctAnswer=questionBank[questionNumber].questionAnswer;
                 if (correctAnswer==true){
                   print('right answer');
                 }
