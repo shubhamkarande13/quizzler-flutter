@@ -7,36 +7,24 @@ class QuizBrain {
   List <Question> _questionBank=[
     Question(q:'You can lead a cow down stairs but not up stairs.',  a:false),
     Question(q: 'Approximately one quarter of human bones are in the feet.', a:true),
-    Question(q:'A slug\'s blood is green.',  a:true),
+    //Question(q:'A slug\'s blood is green.',  a:true),
     Question(q:'The pattern on every person\'s tongue is as unique as a fingerprint.',  a:true),
-    Question(q:'A group of crows is called murder.',  a:true),
-    Question(q:'Tomato sauce was sold in the 1800\'s as medicine.',  a:true),
+    //Question(q:'A group of crows is called murder.',  a:true),
+    //Question(q:'Tomato sauce was sold in the 1800\'s as medicine.',  a:true),
     Question(q:'In France, there’s a place called Y.',  a:true),
     Question(q:'Half of all bank robberies take place on a Friday.',  a:true),
     Question(q:'Cheetahs are so shy that zoos have to give them support dogs.',  a:true),
     Question(q:'The number of people travelling in the Indian Railways every day is equal to the population of Australia.',  a:true),
-    Question(q: 'Some cats are actually allergic to humans', a: true),
+    Question(q: 'Some cats are actually allergic to humans.', a: true),
     Question(q: 'Buzz Aldrin\'s mother\'s maiden name was \"Moon\".', a: true),
     Question(q: 'It is illegal to pee in the Ocean in Portugal.', a: true),
-    Question(
-        q: 'No piece of square dry paper can be folded in half more than 7 times.',
-        a: false),
-    Question(
-        q: 'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',
-        a: true),
-    Question(
-        q: 'The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.',
-        a: false),
-    Question(
-        q: 'The total surface area of two human lungs is approximately 70 square metres.',
-        a: true),
+    Question(q: 'No piece of square dry paper can be folded in half more than 7 times.',        a: false),
+    //Question(        q: 'In London, UK, if you happen to die in the House of Parliament, you are technically entitled to a state funeral, because the building is considered too sacred a place.',a: true),
+    Question(q: 'The loudest sound produced by any animal is 188 decibels. That animal is the African Elephant.',        a: false),
+    Question(q: 'The total surface area of two human lungs is approximately 70 square metres.',        a: true),
     Question(q: 'Google was originally called \"Backrub\".', a: true),
-    Question(
-        q: 'Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.',
-        a: true),
-    Question(
-        q: 'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',
-        a: true),
+    Question(q: 'Chocolate affects a dog\'s heart and nervous system; a few ounces are enough to kill a small dog.',        a: true),
+    //Question(        q: 'In West Virginia, USA, if you accidentally hit an animal with your car, you are free to take it home to eat.',        a: true),
   ];
 
   void nextQuestion(){
@@ -50,4 +38,19 @@ class QuizBrain {
   bool getCorrectAnswer(){
     return _questionBank[_questionNumber].questionAnswer;
   }
+
+  bool isFinished() {
+    if (_questionNumber >= _questionBank.length - 1) {
+      print('Now returning true');
+      return true;
+
+    } else {
+      return false;
+    }
+  }
+  void reset() {
+    _questionNumber = 0;
+  }
+
 }
+
